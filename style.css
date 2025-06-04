@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    background: #0a0a0a;
+    color: #ffffff;
+}
+
+.container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.section {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    overflow-y: auto;
+    padding: 4vh 0;
+    scroll-behavior: smooth;
+}
+
+.section.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Navigation Dots */
+.navigation {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.nav-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+    background: #ffffff;
+    transform: scale(1.2);
+}
+
+/* Section 1 - Hero */
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #a0a0a0;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Algorithm Section */
+.algorithm-section {
+    text-align: left;
+}
+
+.algorithm-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.algorithm-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.algorithm-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    /* margin-bottom: 1.5rem; */
+}
+
+.algorithm-card p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Image Placeholders */
+.image-placeholder {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    margin: 1.5rem 0;
+}
+
+.placeholder-text {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.image-grid .image-placeholder {
+    margin: 0;
+}
+
+/* Encryption Framework Section */
+.encryption-section .timeline-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-content h3 {
+    color: #00ff87;
+    margin-bottom: 1rem;
+}
+
+.timeline-content p {
+    line-height: 1.6;
+}
+
+/* Roadmap Section */
+.roadmap-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
+    gap: 1.5rem;
+}
+
+.roadmap-phase {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    height: 100%;
+}
+
+.phase-header {
+    margin-bottom: 1rem;
+}
+
+.phase-date {
+    color: #00ff87;
+    font-size: 0.9rem;
+}
+
+.phase-goal {
+    color: #00ff87;
+    margin: 1rem 0;
+}
+
+.phase-items {
+    list-style: none;
+}
+
+.phase-items li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.phase-items li::before {
+    content: "•";
+    color: #00ff87;
+    position: absolute;
+    left: 0;
+}
+
+.future-addons {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+}
+
+.addon-items {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.addon-items li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.addon-items li::before {
+    content: "•";
+    color: #00ff87;
+    position: absolute;
+    left: 0;
+}
+
+/* Section transitions */
+.section-intro {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .roadmap-timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .navigation {
+        right: 1rem;
+    }
+    
+    .section {
+        padding: 2vh 0;
+    }
+}
+
+/* Custom Scrollbar Styles */
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 135, 0.3);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 135, 0.5);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 135, 0.3) rgba(255, 255, 255, 0.05);
+} 

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./image/logo.jpeg" />
+    <title>RepoAI - AI-Powered Blockchain Data Security</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="nav-dots">
+        <div class="nav-dot active" data-section="1"></div>
+        <div class="nav-dot" data-section="2"></div>
+        <div class="nav-dot" data-section="3"></div>
+        <div class="nav-dot" data-section="4"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Section 1: Hero -->
+      <section class="section active" id="section1">
+        <div class="content">
+          <div class="hero-content">
+            <h1>RepoAI</h1>
+            <h2>
+              RepoAI — The AI-Powered Framework for Blockchain Data Security
+            </h2>
+            <p class="tagline">
+              Secure. Compliant. Scalable. RepoAI protects your decentralized
+              data infrastructure with cutting-edge AI and cryptographic
+              assurance.
+            </p>
+
+            <div class="feature-cards">
+              <div class="feature-card">
+                <h3>Redefining Blockchain Security with Intelligence</h3>
+                <p>
+                  RepoAI delivers an advanced data security framework for Web3 —
+                  combining AI, zero-knowledge proofs, and decentralized
+                  governance.
+                </p>
+              </div>
+              <div class="feature-card">
+                <h3>Build Trustless Data Systems with RepoAI</h3>
+                <p>
+                  From smart contract auditing to zkML-based verification,
+                  RepoAI is your AI-first foundation for secure, verifiable
+                  blockchain operations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-animation">
+            <div class="ai-particles"></div>
+          </div>
+          <div class="image-placeholder">
+            <img
+              style="width: 100%; height: 200px; object-fit: contain"
+              src="image/home.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Algorithm Part 1 -->
+      <section class="section" id="section2">
+        <div class="content algorithm-section">
+          <h2>Advanced Algorithm Structure</h2>
+          <div class="algorithm-content">
+            <div class="algorithm-text">
+              <div class="algorithm-cards">
+                <div class="algorithm-card">
+                  <p>
+                    We propose a model that combines EfficientLLM with SEKI.
+                    Fig.1 illustrates the overall workflow of EfficientLLM, a
+                    pruning-aware pretraining framework designed for building
+                    compact, high-performance language models suitable for edge
+                    deployment.
+                  </p>
+                </div>
+                <div class="algorithm-card">
+                  <p>
+                    The left section defines the pruning space, covering
+                    multiple architectural components—including self-attention
+                    (K, Q, V, output projections), feed-forward networks
+                    (up/down projections), and Transformer stems—allowing
+                    flexible and fine-grained structural pruning.
+                  </p>
+                </div>
+                <div class="algorithm-card">
+                  <p>
+                    The central module performs global saliency detection, where
+                    forward and backward passes are used to compute the
+                    importance of each channel. Based on this saliency, the
+                    framework dynamically selects less important channels to
+                    prune, updating weights either once or over multiple steps.
+                  </p>
+                </div>
+                <div class="algorithm-card">
+                  <p>
+                    The top-right section (a) shows a local second-order weight
+                    update, leveraging local Hessian information to perform
+                    pruning one channel at a time during training. This approach
+                    ensures more stable performance compared to post-training
+                    methods like SparseGPT or LLM-Pruner (shown in part b),
+                    which prune all channels at once after training.
+                  </p>
+                  <p>
+                    Finally, part (c) visualizes the concept of continuous
+                    parameter dropping, showing how model size gradually
+                    decreases as training progresses. Different pruning
+                    frequencies (e.g., N=1 vs. N=2) allow control over
+                    compression speed and stability.
+                  </p>
+                </div>
+                <div class="algorithm-card">
+                  <p>
+                    EfficientLLM integrates pruning and training in a unified
+                    loop, enabling structure-aware, saliency-driven compression
+                    that is architecture-agnostic and efficient for real-world
+                    deployment on resource-constrained devices.
+                  </p>
+                </div>
+                <div
+                  class="image-placeholder"
+                  style="padding: 10px 0; margin: 0; background-color: #fff"
+                >
+                  <img
+                    style="
+                      width: 100%;
+                      height: 200px;
+                      object-fit: contain;
+                    "
+                    src="image/fig1.png"
+                    alt=""
+                  />
+                  <p style="text-align: center; color: #000">
+                    Fig. 1 Scalable Pruning-Aware Pretraining for
+                    Architecture-Agnostic Edge Language Models
+                  </p>
+                </div>
+                <div class="algorithm-card">
+                  <p>
+                    SEKI is a novel large language model (LLM)-based neural
+                    architecture search (NAS) method. Inspired by the
+                    chain-of-thought (CoT) paradigm in modern LLMs, SEKI
+                    operates in two key stages: self-evolution and knowledge
+                    distillation. In the self-evolution stage, LLMs initially
+                    lack sufficient reference examples, so we implement an
+                    iterative refinement mechanism that enhances architectures
+                    based on performance feedback. Over time, this process
+                    accumulates a repository of high-performance architectures.
+                    In the knowledge distillation stage, LLMs analyze common
+                    patterns among these architectures to generate new,
+                    optimized designs. Combining these two stages, SEKI greatly
+                    leverages the capacity of LLMs on NAS and without requiring
+                    any domain-specific data. Experimental results show that
+                    SEKI achieves state-of-the-art (SOTA) performance across
+                    various datasets and search spaces while requiring only 0.05
+                    GPU-days, outperforming existing methods in both efficiency
+                    and accuracy. Furthermore, SEKI demonstrates strong
+                    generalization capabilities, achieving SOTA-competitive
+                    results across multiple tasks.
+                  </p>
+                </div>
+                <div
+                  class="image-placeholder"
+                  style="
+                    padding: 10px 0;
+                    margin: 0;
+                    background-color: #fff;
+                  "
+                >
+                  <img
+                    style="
+                      width: 100%;
+                      height: 200px;
+                      object-fit: contain;
+                    "
+                    src="image/fig2.png"
+                    alt=""
+                  />
+                  <p style="text-align: center; color: #000">
+                    Fig. 2 Framework of SEKI. SEKI is composed of two stages:
+                    self-evolution and knowledge inspiration. In each iteration
+                    of the self-evolution, the LLM generates optimization
+                    strategies and produces a new, refined architecture by
+                    analyzing the current architecture and its performance
+                    metrics.
+                  </p>
+                </div>
+                <div
+                  class="image-placeholder"
+                  style="
+                    padding: 10px 0;
+                    margin: 0;
+                    background-color: #fff;
+                  "
+                >
+                  <img
+                    style="
+                      width: 100%;
+                      height: 200px;
+                      object-fit: contain;
+                    "
+                    src="image/fig3.png"
+                    alt=""
+                  />
+                  <p style="text-align: center; color: #000">
+                    Fig. 3 PromptframeworkforSelf-Evolution.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Data Encryption Framework Part 1 -->
+      <section class="section" id="section4">
+        <div class="content encryption-section">
+          <h2>Data Encryption Framework</h2>
+          <p class="section-intro">
+            Our laboratory has proposed a large language model framework applied
+            to blockchain technology for data protection and intelligent
+            screening.
+          </p>
+          <div class="framework-timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>1/8 ChainLLM-Guard Introduction</h3>
+                <p>
+                  A framework that brings LLMs into the blockchain world
+                  securely. It filters and analyzes data using large language
+                  models — all while protecting user privacy and proving results
+                  on-chain.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>2/8 Problem Solution</h3>
+                <p>
+                  LLMs are powerful but risky — they can leak sensitive data or
+                  hallucinate. ChainLLM-Guard lets LLMs process Web3 data
+                  without compromising security or trust.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>3/8 Key Features</h3>
+                <p>
+                  – On/off-chain data filtering via LLM<br />
+                  – TEE or zkML protected model execution<br />
+                  – End-to-end encryption & access control<br />
+                  – Zero-knowledge proof of inference<br />
+                  – Verifiable outputs on-chain
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>4/8 LLM Agent Layer</h3>
+                <p>
+                  Built with open-source models like LLaMA, Mistral, ChatGLM.
+                  Receives encrypted data, runs reasoning tasks:<br />
+                  – "Summarize DAO debates"<br />
+                  – "Flag risky DeFi positions"<br />
+                  – "Audit smart contracts for bugs"
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>5/8 Privacy Layer Options</h3>
+                <p>
+                  Option A: TEE (e.g., Intel SGX, Nitro)<br />
+                  – Runs LLM in a secure enclave<br />
+                  – Model never sees raw data<br />
+                  Option B: zkML + FHE<br />
+                  – Fully encrypted inference<br />
+                  – Output comes with a ZK-proof
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>6/8 Verifiability Layer</h3>
+                <p>
+                  – Hashes, Merkle roots, or proofs are stored on-chain<br />
+                  – Smart contracts verify results<br />
+                  – Optional trigger logic: auto-alerts, access control,
+                  governance votes
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>7/8 Tech Stack Highlights</h3>
+                <p>
+                  – LLMs: LLaMA, Mistral, ChatGLM<br />
+                  – Privacy: SGX / zkML / Lit Protocol<br />
+                  – ZK: zkSync, RiscZero, Aleo<br />
+                  – On-chain: Solidity, Chainlink OCR, EigenLayer
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>8/8 ChainLLM-Guard Applications</h3>
+                <p>
+                  ChainLLM-Guard = LLM intelligence + ZK trust + Web3
+                  openness.<br />
+                  Perfect for:<br />
+                  – DAO tools<br />
+                  – DeFi surveillance<br />
+                  – Smart contract auditing<br />
+                  – Private data markets
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="image-placeholder"
+            style="
+              padding: 10px 0;
+              margin: 0;
+              background-color: #fff;
+            "
+          >
+            <img
+              style="width: 100%; height: 400px; object-fit: contain"
+              src="image/fig4.png"
+              alt=""
+            />
+          </div>
+          <div
+            class="image-placeholder"
+            style="
+              padding: 10px 0;
+              margin: 20px 0;
+              background-color: #fff;
+            "
+          >
+            <img
+              style="width: 100%; height: 300px; object-fit: contain"
+              src="image/fig5.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Roadmap -->
+      <section class="section" id="section6">
+        <div class="content roadmap-section">
+          <h2>🚀 RepoAI Roadmap (2024–2026)</h2>
+          <p class="section-intro">
+            An AI-powered, blockchain-native framework for secure and verifiable
+            data infrastructure.
+          </p>
+
+          <div class="roadmap-timeline">
+            <div class="roadmap-phase">
+              <div class="phase-header">
+                <h3>🟦 Phase 1: MVP Development & Core Encryption Layer</h3>
+                <span class="phase-date">2025Q2</span>
+              </div>
+              <p class="phase-goal">
+                🎯 Goal: Deliver a working prototype for secure data encryption
+                and on-chain anchoring.
+              </p>
+              <ul class="phase-items">
+                <li>
+                  ✅ Data Encryption SDK: Implement RSA/AES-based client-side
+                  encryption with IPFS integration.
+                </li>
+                <li>
+                  ✅ Smart Contracts for Data Anchoring: Deploy Solidity
+                  contracts to store encrypted data hashes and access policies.
+                </li>
+                <li>
+                  ✅ Web3 SDK/API: JavaScript/TypeScript SDK for dApps to
+                  encrypt, upload, and query securely.
+                </li>
+                <li>
+                  ✅ Basic Role-Based Access Control (RBAC): Allow selected
+                  addresses to request decryption access.
+                </li>
+                <li>
+                  ✅ Admin Dashboard (Dev UI): Basic frontend for developers to
+                  upload, authorize, and audit encrypted data.
+                </li>
+              </ul>
+            </div>
+
+            <div class="roadmap-phase">
+              <div class="phase-header">
+                <h3>🟪 Phase 2: AI & ZK-Powered Verifiable Computation</h3>
+                <span class="phase-date">2025Q3</span>
+              </div>
+              <p class="phase-goal">
+                🎯 Goal: Enable AI-based inference over encrypted data,
+                verifiable by zero-knowledge proofs.
+              </p>
+              <ul class="phase-items">
+                <li>
+                  🔄 zkML Integration PoC: Leverage frameworks like EZKL or Giza
+                  for lightweight model inference with ZK proofs.
+                </li>
+                <li>
+                  🧠 AI Inference API: Offer RepoAI-powered insights via
+                  encrypted model execution.
+                </li>
+                <li>
+                  🔐 ZK Verifier Smart Contract: Deploy Halo2/Groth16 ZK
+                  verifier contracts on zkEVM-compatible chains.
+                </li>
+                <li>
+                  🧩 Trusted Execution Environment (TEE) Support: Integrate
+                  Integrate Intel SGX or AMD SEV to run AI models securely
+                  off-chain when ZK is infeasible.
+                </li>
+              </ul>
+            </div>
+
+            <div class="roadmap-phase">
+              <div class="phase-header">
+                <h3>🟩 Phase 3: Protocolization & Decentralization</h3>
+                <span class="phase-date">2025Q4</span>
+              </div>
+              <p class="phase-goal">
+                🎯 Goal: Transform RepoAI into a decentralized, permissionless
+                protocol with token incentives.
+              </p>
+              <ul class="phase-items">
+                <li>
+                  🗳️ RepoDAO Governance Launch: Introduce decentralized
+                  governance for managing access rules, parameters, and node
+                  participation.
+                </li>
+                <li>
+                  💰 Tokenomics & Incentives: Design a token system for model
+                  execution, proof validation, and data access rights.
+                </li>
+                <li>
+                  🌐 Validator/Decryptor Node Network: Launch a decentralized
+                  node layer to provide AI inference and ZK validation services.
+                </li>
+                <li>
+                  📦 Data NFT Support: Enable tokenization of data assets via
+                  Ocean Protocol, with fine-grained access control.
+                </li>
+              </ul>
+            </div>
+
+            <div class="roadmap-phase">
+              <div class="phase-header">
+                <h3>🟨 Phase 4: Ecosystem Expansion</h3>
+                <span class="phase-date">2026Q1</span>
+              </div>
+              <p class="phase-goal">
+                🎯 Goal: Scale to multi-chain environments and enable AI module
+                marketplaces.
+              </p>
+              <ul class="phase-items">
+                <li>
+                  🔗 Multi-Chain Deployment: Expand smart contract deployments
+                  to Ethereum, Polygon zkEVM, Arbitrum, and Filecoin VM.
+                </li>
+                <li>
+                  🧠 Plugin-based AI Marketplace: Enable third-party developers
+                  to offer secure, verifiable AI modules within the RepoAI
+                  ecosystem.
+                </li>
+                <li>
+                  🧑‍💼 Enterprise SDK & API Gateway: Provide enterprise-grade APIs
+                  and on-premises deployment options for compliance-sensitive
+                  use cases.
+                </li>
+                <li>
+                  📊 ZK-Powered Analytics Dashboard: Visualize usage data,
+                  security posture, and model audits using zero-knowledge-backed
+                  analytics.
+                </li>
+                <li>
+                  🤝 Partnerships & Integration: Integrate with DePIN networks
+                  (e.g., io.net, Akash), L2 rollups, and decentralized storage
+                  layers.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="future-addons">
+            <h3>🧠 Optional Future Add-ons</h3>
+            <ul class="addon-items">
+              <li>
+                Community Plugin Registry: Open-source ZK/AI plugin registry
+                governed by DAO
+              </li>
+              <li>
+                Staking Mechanism for Proof Validators: Ensures honest behavior
+                in the node network
+              </li>
+              <li>
+                Interoperability with DID/VC: Use decentralized identity and
+                verifiable credentials
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
